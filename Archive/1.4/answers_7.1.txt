@@ -1,0 +1,19 @@
+﻿SELECT food.Name, food.Country, restaurants.Restaurant, nutrition.Calories FROM restaurants JOIN food ON restaurants.Country = food.Country JOIN nutrition ON nutrition.Name = food.Name;
+SeLeCT food.Name, restaurants.Restaurant, nutrition.Calories, nutrition.Protein FROM food JOIN restaurants ON food.country = restaurants.country JOIN nutrition ON nutrition.Name = food.Name JOIN restaurants On restaurants.Restaurant = food.Restaurant
+SELECT
+SELECT food.Name, restaurants.Country, nutrition.Calories FROM Restaurants JOIN food ON food.Name = nutrition.Name JOIN restaurants ON restaurants.Country = food.Country
+Select food.name, food.country, restaurants.restaurant, nutrition.calories FROM food JOIN restaurants ON food.country = restaurants.country JOIN nutrition ON food.name = nutrition.name;
+
+SELECT Name.food, Name.nutrition, Restaurant,Restaurants.Join Name On name.resturant=name.food.AND JOIN name ON name.nutrition=name.resturants
+SELECT food.name, food.country, restaurants.restaurant, nutrition.calories FROM food JOIN restaurants ON food.country = restaurant.country AND ON food.name = nutrition.name;
+SELECT food.name, food.country, restaurants.restaurant, nutrition.calories FROM food JOIN restaurants ON food.country=restaurants.country JOIN nutrition ON food.name=nutrition.name;
+Select food.name, food.country, restaurants.restaurant, nutrition.calories
+SELECT food.name, food.country, restaurants.restaurant, nutrition.calories FROM restaurants JOIN food ON restaurants.country = food.country JOIN nutrition ON food.name = nutrition.name;
+Select restaurants.food, food.country, nutrition.calories JOIN
+Select food.name, countries.country, restaurants.restaurant, food.calories From food join restaurants on countries.name = countries.country
+SELECT food.NAME, restaurants.RESTAURANT, restaurants.COUNTRY, nutrition.CALORIES FROM nutrition JOIN name.food ON food.name (name.food == food.name) FROM restaurants JOIN country.restaurant ON country.food (country.restaurant == country.food) FROM nutrition JOIN calories.nutrition ON rating.restaurants (calories.nutrition == rating.restaurants);
+SELeCT food.name, restaurant.restaurant, food.country, nutrition.calories FROM food JOIN restaurant ON food.country = restaurant.county JOIN nutrition ON food.name = nutrition.name;
+SELEC food.Name, food.Country, restaurants.Restaurant, nutrition.Calories FROM food JOIN restaurants ON food.Country = restaurants.Country JOIN nutrition ON nutrition.Name = food.Name
+SELECT food.Name, country.Restaurant, nutrition.Calories JOIN country.Restaurant, name.Restaurant, food.Name, nutrition.Calories ON restaurant Where restaurants.Restaurant = country.Restaurant
+SELECT food.Name, country.Country, restaurant.Restaurant, nutrition.Calorie FROM country JOIN country ON country.Country = food.Country JOIN food ON food.Name = nutrition.Name
+food.Name, country.Country, restaurant.Restaurant, nutrition.Calorie FROM country JOIN country ON country.Country = food.Country JOIN food ON food.Name = nutrition.Name;

@@ -1,0 +1,21 @@
+INSERT INTO `Penguins` (`Name`, `Size`, `Weight`) VALUES ("Chinstrap", "M", "5.0");
+INSERT INTO `Name`, `Size`, `Weight` VALUES 'CHINSTRAP PENGUIN' , 'M', '5.0'
+INSERT INTO penguins (`Name`, `Size`, `Weight`) VALUES ('Chinstrap','M','5.0');
+INSERT, VALUES, `penguins` ( `Name`, Size`, `Weight`) INTO ( size = M, weight = 5.0);
+INSERT INTO `penguins` (`Name`, `Size`, `Weight`) VALUES ( "Chinstrap", "M", "5.0");
+INSERT INTO `Chinstrap penguin` (`Name`, `Size`, `Weight`) VALUES  (size = M, weight = 5.0);
+INSERT INTO `penguins` ( `Name`, `Size`, `Weight`) VALUES ( "Chinstrap", "M", "5.0");
+ size =M, weight=5.0INSERT*
+INSERT INTO `penguins` ( `Name`, `Size`, `Weight`) VALUES ("Chinstrap", "M", "5.0");
+INSERT INTO `penguins` (`Name`, `Size`, `Weight`) VALUES ('Chinstrap','M','5.0');
+Insert into `penguins` (`Name`, `Size`, `Weight`) values ('Chinstrap penguin', 'M', '5.0')
+INSERT INTO `Penguins` (`Name`, `Size`, `Weight`) VALUES ("Chinstrap", "M", "5.0");
+INSERT (`name`, `size`, `weight`) INTO 'penguins table'
+INSERT INTO `penguins` (`Name`, `Size`, `Weight`) VALUES ('Chinstrap Penguin', 'M', '5.0');
+INSERT INTO `penguins` ( _`Name`,`Size`,Weight`_______________) VALUES ( "Krill", "M", "5.0");
+INSERT INTO `penguins` WHERE `size` = 'M' && `weight` = '5.0' (`Name`, `Size`, `Weight`)
+INSERT INTO `PENGUINS``NAME`,`SIZE`,`WEIGHT` VALUES `CHINSTRAP`,`M`,`5.0`
+INSERT INTO `PENGUINS` (`NAME`, `SIZE`, `WEIGHT`) VALUES (CHINSTRAP, SIZE = M, WEIGHT = 5.0)
+INSERT (`Name`, `Size`, `Weight`)
+INSERT INTO `penguin` (`size` , `weight`) WHERE (`M` , `5.0)
+INSERT FROM `Penguins` VALUE `Name`,`Size`,`Weight` INTO `Chinstrap`,`M`,`5.0`;

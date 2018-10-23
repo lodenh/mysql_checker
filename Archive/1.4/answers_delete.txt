@@ -1,0 +1,8 @@
+delete countries where population <= 10000;
+delete from countries where population < 10000;
+drop countries where population = 3000;
+delete from countries;
+delete from country;
+select delete table countries where;
+delete from table where food LIKE "%K";
+delete from countries where food LIKE "%K";

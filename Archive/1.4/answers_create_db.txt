@@ -1,0 +1,6 @@
+CREATE mydatabase;
+create table mydatabase
+create database mydatabase;
+create mydatabase where database;
+make new database mydatabase;
+database mydatabase;

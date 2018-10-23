@@ -1,0 +1,23 @@
+SELECT parks.name, countries.country, countries.population From parks JOIN countries ON parks.name=countries.code;
+SELECT parks.name, countries.country, countries.population FROM countries JOIN parks ON countries.code, parks,countrycode;
+SELECT parks.name, countries.country, countries.population FROM parks JOIN countries on parks.countrycode ON countries.code
+Select name.parks, country.countries, population.countries from parks.countries join parks.countries on
+SELECT parks.Name, countries.Country, countries.Population FROM parks JOIN countries ON parks.CountryCode = countries.Code;"
+select parks.name, countries.country, countries.population from parks join countries on countries.population = country.code
+SELECT parks.Name, countries.Country, countries.Population FROM parks, countries JOIN parks.CountryCode, countries.Code ON parks.CountryCode = countries.Code
+SELECT countries.country, countries.population FROM countries JOIN parks ON parks.name;
+Select parks.name,countries.country, countries.population From countries JOIN countries on countries.code=parks.Countrycode
+SELECT, Parks. JOIN, Name, Parks. Country, Parks. Population, Parks.
+Select parks.Name, countries.country, countries. population From parks Join countries ON Parks.country code=countries.code
+SELECT name.Parks, country.Countries, population.Countries, FROM countries JOIN population ON visitors;
+SELECT Name.parks, Country.countries, population.countries FROM parks JOIN countries ON 'Country Code' = Code.countries
+Select parks.Name, parks.Country, parks
+SELECT `parks.name`, `countries.country`, countries.population` FROM parks JOIN countries ON `parks.countrycode` = `countries.code`;
+SELECT parks.Name, countries.country, countries.population FROM countries JOIN parks ON parks.countrycode = countries.code;
+SELECT * parks.name Join countries.country, countries.populations
+SELECT countries.country, countries.population FROM countries JOIN parks.countrycode ON countries.code
+
+SELECT parks.Name, countries.Country, parks.Visitors, from JOIN countries.Country, ON parks.Country
+FROM JOIN countries ON countries.Country = parks.Country
+Join Name, from country to country;
+SELECT

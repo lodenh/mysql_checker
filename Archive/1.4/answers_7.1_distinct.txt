@@ -1,0 +1,5 @@
+SELECT distinct food.Name, food.Country, restaurants.Restaurant, nutrition.Calories FROM restaurants JOIN food ON restaurants.Country=food.Country JOIN nutrition ON nutrition.Name = food.Name;
+SELECT food.name, food.country, restaurants.restaurant, nutrition.calories FROM restaurants JOIN food ON restaurants.country = food.country JOIN nutrition ON food.name = nutrition.name;
+Select food.name, food.country, restaurants.restaurant, nutrition.calories distinct FROM food JOIN restaurants ON food.country = restaurants.country JOIN nutrition ON food.name = nutrition.name;
+SELECT food.name, food.country, restaurants.restaurant, nutrition.calories FROM food JOIN restaurants ON food.country = restaurants.country JOIN nutrition ON food.name=nutrition.name WHERE * distinct;
+SELECT food.Name, food.Country, restaurants.Restaurant, nutrition.Calories FROM food JOIN restaurants ON food.country = restaurants.country JOIN nutrition ON nutrition.Name = food.Name;

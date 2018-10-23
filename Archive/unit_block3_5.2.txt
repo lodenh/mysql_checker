@@ -1,0 +1,6 @@
+SELECT parks.Name, countries.country, countries.population FROM JOIN parks ON parks.countrycode = countries.code;
+SELECT parks.Name, countries.country, countries.population FROM countries JOIN parks ON countries.countrycode = countries.code;
+SELECT parks.Name, countries.country, countries.population FROM countries JOIN countries ON parks.countrycode = countries.code;
+SELECT parks.Name, countries.country, countries.population FROM countries JOIN parks ON parks.countrycode = countries.code JOIN apples ON apples.code = countries.code;
+SELECT parks.Name, countries.country, countries.population FROM countries JOIN parks ON parks.name = countries.code;
+SELECT parks.Name, countries.country, countries.population FROM countries JOIN parks ON parks = countries.code;
