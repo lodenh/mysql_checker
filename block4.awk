@@ -2,10 +2,10 @@
 # Loden Henning
 # GROK Lab 2018
 #
-# Checks for required number of WHERE, AND, and OR statements and that WHERE conditions match what is required.
+# Checks for required WHERE, AND, and OR statements and correct ORDER BY clause.
 #
 
-function block4(debug_mode, result_b4, num_WHERE_req, num_AND_req, num_OR_req, WHERE_cond){
+function b4_conditions(debug_mode, result_b4, num_WHERE_req, num_AND_req, num_OR_req, WHERE_cond, ORDERBY_cond){
 
   #-----------------------------------------------------------------------------------------------------------------
   # Checks if line has required number of WHERE, AND, and OR statements and that WHERE conditions match what is required.
@@ -166,5 +166,78 @@ function block4(debug_mode, result_b4, num_WHERE_req, num_AND_req, num_OR_req, W
   {if (OR_extra > 0){
     print tip("04-010");
   }}
+
+  #-----------------------------------------------------------------------------------------------------------------
+  # Checks for correct ORDER BY column and sort direction.
+  #
+  
+  ORDERs_detected = 0;
+  # Errors that can be made
+  ORDER_missing = 0;
+  ORDER_extra = 0;
+  ORDER_bad_structure = 0;
+  ORDER_bad_column = 0;
+  ORDER_bad_sort = 0;
+
+  {if (ORDERBY_cond[0] != null){
+
+    {for (n = 1; n <= NF; n++){
+      {if ($n == "order"){
+        ORDERs_detected++;
+        {if ($(n+1) != "by"){ORDER_bad_structure = 1}
+        else {
+          if ($(n+2) !~ ORDERBY_cond[0]){ORDER_bad_column = 1}
+          if (ORDERBY_cond[1] == 0){
+            if ($(n+3) == "desc"){ORDER_bad_sort = 1}
+          }
+          if (ORDERBY_cond[1] == 1){
+            if ($(n+3) != "desc"){ORDER_bad_sort = 1}
+          }
+        }}
+      }}
+    }}
+
+    {if (ORDERs_detected < 1){
+      {if (debug_mode == 1){print "\tORDER_missing";}}
+      ORDER_missing = 1;
+      result_b4[0]++;
+    }}
+    {if (ORDERs_detected > 1){
+      {if (debug_mode == 1){print "\tORDER_extra";}}
+      ORDER_extra = 1;
+      result_b4[0]++;
+    }}
+    {if (ORDER_bad_structure == 1){
+      {if (debug_mode == 1){print "\tORDER_bad_structure";}}
+      result_b4[0]++;
+    }}
+    {if (ORDER_bad_column == 1){
+      {if (debug_mode == 1){print "\tORDER_bad_column";}}
+      result_b4[0]++;
+    }}
+    {if (ORDER_bad_sort == 1){
+      {if (debug_mode == 1){print "\tORDER_bad_sort";}}
+      result_b4[0]++;
+    }}
+
+  }}
+
+  # Print tips
+  {if (ORDER_missing > 0){
+    print tip("04-011");
+  }}
+  {if (ORDER_extra > 0){
+    print tip("04-012");
+  }}
+  {if (ORDER_bad_structure > 0){
+    print tip("04-013");
+  }}
+  {if (ORDER_bad_column > 0){
+    print tip("04-014");
+  }}
+  {if (ORDER_bad_sort > 0){
+    print tip("04-015");
+  }}
+
 
 } # End of Block 4

@@ -188,27 +188,25 @@ switch (code){
 		return "Make sure your WHERE meets all the criteria you need. You should have to use an 'OR'.";
     case "04-010":
 		return "Whoops! You only need an 'OR' when using a 'WHERE' and you need to meet at least one criteria (i.e. WHERE <column1> = <value1> OR <column2> >= <value2>).";
-
-    # BLOCK 5: ORDER BY
-    case "05-001":
+    case "04-011":
 		return "If you need to sort the results of your query, try adding the 'ORDER BY' statement.";
-    case "05-002":
+    case "04-012":
 		return "It looks like you have more than one 'ORDER BY' statement. If you need to sort by multiple columns, try using the structure 'ORDER BY <column1> ASC, <column2> DESC'";
-    case "05-003":
+    case "04-013":
 		return "Try to use the structure 'ORDER BY <column1> ASC, <column2> DESC'";
-    case "05-004":
+    case "04-014":
 		return "In your 'ORDER BY' condition, make sure you are sorting the correct column.";
-    case "05-005":
+    case "04-015":
 		return "In your 'ORDER BY' condition, double check that you are sorting the results in the correct order (ASC or DESC).";
 
-	# BLOCK 6: Commas
-	case "06-001":
+	# BLOCK 5: Commas
+	case "05-001":
 		return "Your final query should not require any commas.";
-	case "06-002":
+	case "05-002":
 		return "It looks like you have a comma where you don't need one.";
-	case "06-003":
+	case "05-003":
 		return "It looks like you are missing a comma.";
-	case "06-004":
+	case "05-004":
 		return "Double check that all of your parentheses are closed.";
   }
 }

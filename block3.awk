@@ -5,7 +5,7 @@
 # Checks if all tables are joined, JOIN structure, ON condition columns, and if ON condition matches JOIN table.
 #
 
-function block3(debug_mode, result_b3, FROM_tables, ON_cols){
+function b3_tables(debug_mode, result_b3, FROM_tables, ON_cols){
 
   #-----------------------------------------------------------------------------------------------------------------
   # Tests if all tables are joined. Detects duplicates.

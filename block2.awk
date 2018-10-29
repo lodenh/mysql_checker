@@ -5,7 +5,7 @@
 # Checks for required SELECT columns, CREATE TABLE columns and datatypes, INSERT columns and values, UPDATE columns and values.
 #
 
-function block2(debug_mode, result_b2, command, fld_SELECT, fld_FROM, SELECT_cols, CREATE_cols, UPDATE_cols, num_JOIN_req){
+function b2_columns(debug_mode, result_b2, command, fld_SELECT, fld_FROM, SELECT_cols, CREATE_cols, UPDATE_cols, num_JOIN_req){
 
   #-----------------------------------------------------------------------------------------------------------------
   # Tests if all required SELECT columns are requested. Detects duplicates.

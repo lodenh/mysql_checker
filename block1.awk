@@ -2,11 +2,11 @@
 # Loden Henning
 # GROK Lab 2018
 #
-# Checks for required command (e.g. SELECT, SHOW, UPDATE, etc.) and associated syntax.
+# Checks for required command (e.g. SELECT, SHOW, UPDATE, etc.) and associated details (e.g. 'DISTINCT', 'databases', etc.).
 # Commands are: SELECT ... FROM, SHOW, USE, INSERT, UPDATE, DELETE, CREATE as "select", "show", "use", "insert", "update", "delete", "create" respectively.
 #
 
-function block1(debug_mode, result_b1, command, FROM_tables, tables_detected){
+function b1_commands(debug_mode, result_b1, command, FROM_tables, tables_detected){
 
   #-----------------------------------------------------------------------------------------------------------------
   # Count how many of each command there are to determine whether student has too many, too few, or has misplaced the command.

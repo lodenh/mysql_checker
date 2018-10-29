@@ -12,7 +12,6 @@
 @include "./block3.awk"
 @include "./block4.awk"
 @include "./block5.awk"
-@include "./block6.awk"
 
 BEGIN {
 	# Ignores letter cases (e.g. A == a is true)
@@ -50,11 +49,11 @@ function checker(command, SELECT_cols, FROM_tables, ON_cols, CREATE_cols, UPDATE
 	}}
 
 	#-----------------------------------------------------------------------------------------------------------------
-	# block1 checks for required command (e.g. SELECT, SHOW, UPDATE, etc.) and associated syntax.
+	# b1_commands checks for required command (e.g. SELECT, SHOW, UPDATE, etc.) and associated details (e.g. 'DISTINCT', 'databases', etc.).
 	#
 	{if (result_b0[0] == 0){
 		{result_b1[0] = 0;}
-		{block1(debug_mode, result_b1, command, FROM_tables, tables_detected);}
+		{b1_commands(debug_mode, result_b1, command, FROM_tables, tables_detected);}
 		{fld_SELECT = result_b1[1];}
 		{fld_FROM = result_b1[2];}
 		{if (debug_mode == 1){print "^ B1 Errors: " result_b1[0]}}
@@ -62,52 +61,42 @@ function checker(command, SELECT_cols, FROM_tables, ON_cols, CREATE_cols, UPDATE
 	}}
 
 	#-----------------------------------------------------------------------------------------------------------------
-	# block2 checks for required SELECT columns, CREATE TABLE columns and datatypes, INSERT columns and values, UPDATE columns and values.
+	# b2_columns checks for required SELECT columns, CREATE TABLE columns and datatypes, INSERT columns and values, UPDATE columns and values.
 	#
 	{if (result_b0[0] == 0){
 		{result_b2[0] = 0;}
-		{block2(debug_mode, result_b2, command, fld_SELECT, fld_FROM, SELECT_cols, CREATE_cols, UPDATE_cols, num_JOIN_req);}
+		{b2_columns(debug_mode, result_b2, command, fld_SELECT, fld_FROM, SELECT_cols, CREATE_cols, UPDATE_cols, num_JOIN_req);}
 		{if (debug_mode == 1){print "^ B2 Errors: " result_b2[0]}}
 		{if (debug_mode == 1){print ""}}
 	}}
 
 	#-----------------------------------------------------------------------------------------------------------------
-	# block3 checks if all tables are joined, JOIN structure, ON condition columns, and if ON condition matches JOIN table.
+	# b3_tables checks if all tables are joined, JOIN structure, ON condition columns, and if ON condition matches JOIN table.
 	#
 	{if (result_b0[0] == 0){
 		{result_b3[0] = 0;}
-		{block3(debug_mode, result_b3, FROM_tables, ON_cols);}
+		{b3_tables(debug_mode, result_b3, FROM_tables, ON_cols);}
 		{if (debug_mode == 1){print "^ B3 Errors: " result_b3[0]}}
 		{if (debug_mode == 1){print ""}}
 	}}
 
 	#-----------------------------------------------------------------------------------------------------------------
-	# block4 checks for required number of WHERE, AND, and OR statements and that WHERE conditions match what is required.
+	# b4_conditions checks for required WHERE, AND, and OR statements and correct ORDER BY clause.
 	#
 	{if (result_b0[0] == 0){
 		{result_b4[0] = 0;}
-		{block4(debug_mode, result_b4, num_WHERE_req, num_AND_req, num_OR_req, WHERE_cond);}
+		{b4_conditions(debug_mode, result_b4, num_WHERE_req, num_AND_req, num_OR_req, WHERE_cond, ORDERBY_cond);}
 		{if (debug_mode == 1){print "^ B4 Errors: " result_b4[0]}}
 		{if (debug_mode == 1){print ""}}
 	}}
 
 	#-----------------------------------------------------------------------------------------------------------------
-	# block5 checks for correct ORDER BY column and sort direction.
+	# b5_syntax checks for correct comma placement.
 	#
 	{if (result_b0[0] == 0){
 		{result_b5[0] = 0;}
-		{block5(debug_mode, result_b5, ORDERBY_cond);}
+		{b5_syntax(debug_mode, result_b5, command, fld_SELECT, fld_FROM);}
 		{if (debug_mode == 1){print "^ B5 Errors: " result_b5[0]}}
-		{if (debug_mode == 1){print ""}}
-	}}
-
-	#-----------------------------------------------------------------------------------------------------------------
-	# block6 checks for correct comma placement.
-	#
-	{if (result_b0[0] == 0){
-		{result_b6[0] = 0;}
-		{block6(debug_mode, result_b6, command, fld_SELECT, fld_FROM);}
-		{if (debug_mode == 1){print "^ B6 Errors: " result_b6[0]}}
 		{if (debug_mode == 1){print ""}}
 	}}
 
@@ -130,6 +119,6 @@ function checker(command, SELECT_cols, FROM_tables, ON_cols, CREATE_cols, UPDATE
 
 
 	# If no errors were detected, print a congratulation
-	{if ((result_b0[0] + result_b1[0] + result_b2[0] + result_b3[0] + result_b4[0] + result_b5[0] + result_b6[0]) == 0){print "Nice one!"}}
+	{if ((result_b0[0] + result_b1[0] + result_b2[0] + result_b3[0] + result_b4[0] + result_b5[0]) == 0){print "Nice one!"}}
 
 }
