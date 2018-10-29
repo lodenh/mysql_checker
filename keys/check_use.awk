@@ -5,7 +5,7 @@
 # This script checks the free response answers of quiz 5.2 for common mistakes.
 #
 
-@include "../Quiz Checker/checker_v1.5.awk"
+@include "checker_v1.5.awk"
 
 BEGIN {
   # Answers from key:

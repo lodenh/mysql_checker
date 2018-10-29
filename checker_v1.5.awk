@@ -5,14 +5,14 @@
 # This function checks students' free response answers for common mistakes.
 #
 
-@include "../Quiz Checker/functions.awk"
-@include "../Quiz Checker/tips.awk"
-@include "../Quiz Checker/block1.awk"
-@include "../Quiz Checker/block2.awk"
-@include "../Quiz Checker/block3.awk"
-@include "../Quiz Checker/block4.awk"
-@include "../Quiz Checker/block5.awk"
-@include "../Quiz Checker/block6.awk"
+@include "./functions.awk"
+@include "./tips.awk"
+@include "./block1.awk"
+@include "./block2.awk"
+@include "./block3.awk"
+@include "./block4.awk"
+@include "./block5.awk"
+@include "./block6.awk"
 
 BEGIN {
 	# Ignores letter cases (e.g. A == a is true)
@@ -32,8 +32,8 @@ function checker(command, SELECT_cols, FROM_tables, ON_cols, CREATE_cols, UPDATE
 
 	{if(debug_mode==1){print "\n\n---------------LINE " NR "---------------"}}
 
-	# awk does not allow us to pass any variable we wish by reference. Instead, arrays are always passed by reference and variables are always passed by value.
-	# To overcome this, a standard form of array will be used for feedback from block functions.
+	# Awk does not allow us to pass any variable we wish by reference. Instead, arrays are always passed by reference and variables are always passed by value.
+	# To overcome this, a standardized array will be used for feedback from block functions.
 	# result_bX arrays consist of:
 	# [0] = A count of the number of errors found in a block. There isn't a need for a count, but it is just as useful as a bool while being more informative.
 	# [1+] = Any variables that were created in the block that need to be used in another block.
