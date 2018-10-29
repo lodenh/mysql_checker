@@ -1,0 +1,11 @@
+SELECT * FROM cities WHERE population >= 5000;
+SELECT * FROM cities WHERE population>=5000;
+SELECT * FROM cities WHERE population = 5000;
+SELECT * FROM cities WHERE population=5000;
+SELECT * FROM cities WHERE people >= 5000;
+SELECT * FROM cities WHERE people>=5000;
+SELECT * FROM cities WHERE population >= 3000;
+SELECT * FROM cities WHERE population>=3000;
+SELECT * FROM cities IF population >= 5000;
+SELECT * FROM cities WHERE population LIKE 5000;
+SELECT * FROM cities;

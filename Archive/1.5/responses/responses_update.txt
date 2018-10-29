@@ -1,0 +1,12 @@
+UPDATE countries SET population = 10000, continentID = 2 WHERE name LIKE "Slov%";
+UPDATE countries population = 10000, continentID = 2 WHERE name LIKE "Slov%";
+SET population = 10000, continentID = 2 WHERE table = countries;
+UPDATE population, continentID VALUES (10000, 2) FROM countries;
+UPDATE countries SET population = 15000, continentID = 2 WHERE name LIKE "Slov%";
+UPDATE countries SET pop = 10000, continentID = 2 WHERE name LIKE "Slov%";
+UPDATE countries SET population = 10000, continentID = 3 WHERE name LIKE "Slov%";
+UPDATE countries SET population = 10000, location = 2 WHERE name LIKE "Slov%";
+UPDATE countries SET population=15000, continentID=2 WHERE name LIKE "Slov%";
+UPDATE countries SET pop=10000, continentID=2 WHERE name LIKE "Slov%";
+UPDATE countries SET population=10000, continentID=3 WHERE name LIKE "Slov%";
+UPDATE countries SET population=10000, location=2 WHERE country LIKE "Slov%";

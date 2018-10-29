@@ -5,7 +5,7 @@
 # This script checks the free response answers of quiz 5.2 for common mistakes.
 #
 
-@include "checker_v1.6.awk"
+@include "checker_v1.5.awk"
 
 BEGIN {
   # Answers from key:
@@ -14,7 +14,7 @@ BEGIN {
   # Commands are: SELECT ... FROM, SHOW, USE, INSERT, UPDATE, DELETE, CREATE as "select", "show", "use", "insert", "update", "delete", "create" respectively.
   # Currently supports "select".
   # The command is placed in index [0]. This should never be null.
-  command[0] = "select";
+  command[0] = "use";
   # Indexes [1] and onward are supplemental.
     # For SELECT , [1] may be "distinct".
     # For SHOW, [1] must be either "databases" or "tables".
@@ -23,23 +23,19 @@ BEGIN {
 		# For UPDATE, [1] must be the name of a table.
 		# For DELETE, [1] must be the name of a table.
 		# For CREATE, [1] must be either "database" or "table". [2] must be the name of the database or table.
-  command[1] = null;
+  command[1] = "Country";
 
   # Defines array containing all required columns to select (e.g. SELECT <...>, <...> FROM).
   # Do not include columns for ON statements (e.g. ON <...> = <...>).
-  SELECT_cols[0] = "parks.name";
-  SELECT_cols[1] = "countries.country";
-  SELECT_cols[2] = "countries.population";
+  SELECT_cols[0] = null;
 
   # Defines array containing all required tables to join (e.g. FROM <table0> JOIN <table1> ... JOIN <table2>).
-  FROM_tables[0] = "countries";
-  FROM_tables[1] = "parks";
+  FROM_tables[0] = null;
 
   # Defines array containing all columns that need be used in ON statements (e.g. ON <table1.column> = <table2.column>).
   # The columns are paired such that elements [0] and [1] have to be used together (e.g. ON [0] = [1]), then [2] and [3], etc..
   # If a column is used in two ON statements, repeat the column in this array.
-  ON_cols[0] = "parks.countrycode";
-  ON_cols[1] = "countries.code";
+  ON_cols[0] = null;
 
 	# Defines array containing all columns and datatypes needed in CREATE TABLE query (e.g. CREATE TABLE table1 (<col0> <datatype0>, <col1> <datatype1>);).
 	# The indexes are paried such that the first element is the column name and the second is the datatype (e.g. [0] is calories and [1] is int).
@@ -69,7 +65,7 @@ BEGIN {
   ORDERBY_cond[0] = null;
 
   # Defines variables with amounts of each statement in key (e.g. "SELECT...FROM...WHERE...AND...;" has 1 WHERE, 1 AND, 0 OR).
-  num_JOIN_req = 1;
+  num_JOIN_req = 0;
   num_WHERE_req = 0;
   num_AND_req = 0;
   num_OR_req = 0;

@@ -1,0 +1,20 @@
+SHOW table
+SHOW mysqlgame database
+SHOW tables
+SHOW databases
+SHOW tables
+SHOW mysqlgame
+SHOW  mysqlgame
+SHOW mysqlgame
+SHOW databases
+SHOW mysqlgame;
+SHOW DATABASE
+show `tables`
+SHOW tables
+SHOW tables
+Show tables
+SHOW tables
+show table
+SHOW tables
+Show Tables
+SHOW tables

@@ -1,0 +1,20 @@
+show tables;
+SHOW tables
+show tables;
+Show tables;
+Show tables;
+SHOW
+*SHOW
+SHOW tables
+SHOW tables
+SHOW
+Show tables;
+Show * `tables`
+SHOW Tables
+show tables;
+Use
+SHOW tables
+output list of all tables available
+Show tables;
+Use Tables;
+SHOW tables;
